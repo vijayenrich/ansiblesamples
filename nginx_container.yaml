@@ -6,7 +6,7 @@
       become: true
 
     - name: Run a command to run docker nginx container
-      command: docker run -P -d nginx
+      command: docker run --name={{ dockername }} -P -d nginx
       become: true
 
     - name: check docker container that are running
