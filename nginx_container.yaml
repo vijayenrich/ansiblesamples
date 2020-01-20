@@ -4,6 +4,9 @@
     - name: check docker container that are running
       command: docker ps
       become: true
+      register: out
+
+    - debug: var=out.stdout_lines
 
     - name: Run a command to run docker nginx container
       command: docker run --name={{ dockername }} -P -d nginx
@@ -12,3 +15,6 @@
     - name: check docker container that are running
       command: docker ps
       become: true
+      register: finalout
+    
+    - debug: var=finalout.stdout_lines
