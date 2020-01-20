@@ -1,6 +1,14 @@
 ---
 - hosts: all
   tasks:
+    - name: check docker container that are running
+      command: docker ps
+      become: true
+
     - name: Run a command to run docker nginx container
-      command: docker run --name mynginx6 -P -d nginx
+      command: docker run -P -d nginx
+      become: true
+
+    - name: check docker container that are running
+      command: docker ps
       become: true
