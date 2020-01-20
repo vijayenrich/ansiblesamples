@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - name: Run a command to run docker nginx container
+      command: docker run --name mynginx6 -P -d nginx
+      become: true
