@@ -9,10 +9,10 @@
     - debug: var=out.stdout_lines
 
     - name: Run a command to start docker nginx container
-      command: docker run --name={{ nginxname }} -P -d nginx
+      command: docker run --name={{ nginxname }} -p {{ nginxport }}:80 -d nginx
       become: true
 
-    - name: check {{ nginxname }} container status
+    - name: check {{ nginxname }} container status running on {{ nginxport }}
       command: docker ps -f name={{ nginxname }}
       become: true
       register: finalout
