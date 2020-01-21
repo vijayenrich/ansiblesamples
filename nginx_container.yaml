@@ -8,7 +8,7 @@
 
     - debug: var=out.stdout_lines
 
-    - name: Run a command to run docker nginx container
+    - name: Run a command to start docker nginx container
       command: docker run --name={{ nginxname }} -P -d nginx
       become: true
 
