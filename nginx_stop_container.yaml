@@ -5,5 +5,9 @@
       command: docker stop {{ nginxname }}
       become: true
 
+    - name: Run command to remove nginx container
+      command: docker rm {{ nginxname }}
+      become: true
+
     - debug:
-        msg: {{ nginxname }} container stopped 
+        msg: {{ nginxname }} container stopped and removed 
