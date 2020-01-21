@@ -10,4 +10,4 @@
       become: true
 
     - debug:
-        msg: {{ nginxname }} container stopped and removed 
+        msg: container {{ nginxname }} stopped and removed 
