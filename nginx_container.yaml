@@ -12,7 +12,7 @@
       become: true
 
     - debug: 
-    msg: Check {{ nginxname }} container status running on {{ nginxport }}
+      msg: Check {{ nginxname }} container status running on {{ nginxport }}
 
     - name: check {{ nginxname }} container status running on {{ nginxport }}
       command: docker ps -f name={{ nginxname }}
@@ -21,4 +21,4 @@
     - debug: var=finalout.stdout_lines
 
     - debug:
-    msg: Access Nginx using http://{{ nginxname }}:{{ nginxport }}
+      msg: Access Nginx using http://{{ nginxname }}:{{ nginxport }}
